@@ -1,0 +1,56 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.projekti2sh.viewModels.LoginViewModel" />
+        <variable
+            name="loginReq"
+            type="com.example.projekti2sh.models.LoginRequest" />
+        <variable
+            name="navController"
+            type="androidx.navigation.NavController" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Email"
+            android:text="@={loginReq.email}" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextEmail"
+            android:layout_marginTop="8dp"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:text="@={loginReq.password}" />
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextPassword"
+            android:layout_marginTop="16dp"
+            android:onClick="@{() -> viewModel.login(loginReq.email, loginReq.password, navController)}"
+            android:text="Login" />
+
+<!--        <ProgressBar-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/loginButton"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}" />-->
+    </RelativeLayout>
+
+</layout>
