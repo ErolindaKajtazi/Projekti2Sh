@@ -12,11 +12,11 @@
         tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
-            app:destination="@id/nav_login"
-            android:enterAnim="@transition/fade_in">
+            app:destination="@id/nav_login">
             <argument
                 android:name="student"
-                app:argType="com.example.projekti2sh.models.Student" />
+                app:argType="com.example.projekti2sh.models.Student"
+                />
         </action>
     </fragment>
 

@@ -30,12 +30,12 @@ class StudentAdapter(private val studentList : List<Student>) : RecyclerView.Ada
             binding.student = student
             binding.executePendingBindings()
 
-            // Use Picasso to load the image into ImageView
-            Picasso.get()
-                .load(student.imageUrl)
-                .placeholder(R.drawable.placeholder_image) // Optional: Placeholder image while loading
-//                .error(R.drawable.error_image) // Optional: Image to show in case of error
-                .into(binding.imageView)
+//            // Use Picasso to load the image into ImageView
+//            Picasso.get()
+//                .load(student.imageUrl)
+//                .placeholder(R.drawable.placeholder_image) // Optional: Placeholder image while loading
+////                .error(R.drawable.error_image) // Optional: Image to show in case of error
+//                .into(binding.imageView)
         }
     }
 }

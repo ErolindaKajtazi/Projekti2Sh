@@ -7,6 +7,6 @@ data class Student(
     var name: String,
     var email: String,
     var password: String,
-    var imageUrl: String
+//    var imageUrl: String
 
 ) : Serializable
