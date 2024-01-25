@@ -3,8 +3,10 @@ package com.example.projekti2sh.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projekti2sh.R
 import com.example.projekti2sh.models.Student
 import com.example.projekti2sh.databinding.StudentItemBinding
+import com.squareup.picasso.Picasso
 
 class StudentAdapter(private val studentList : List<Student>) : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
 
@@ -27,6 +29,13 @@ class StudentAdapter(private val studentList : List<Student>) : RecyclerView.Ada
         fun bind(student: Student) {
             binding.student = student
             binding.executePendingBindings()
+
+            // Use Picasso to load the image into ImageView
+            Picasso.get()
+                .load(student.imageUrl)
+                .placeholder(R.drawable.placeholder_image) // Optional: Placeholder image while loading
+//                .error(R.drawable.error_image) // Optional: Image to show in case of error
+                .into(binding.imageView)
         }
     }
 }

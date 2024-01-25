@@ -32,6 +32,15 @@
             android:textStyle="bold" />
 
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder_image"
+        android:contentDescription="Student Image"/>
+
+
 
     </RelativeLayout>
 </layout>

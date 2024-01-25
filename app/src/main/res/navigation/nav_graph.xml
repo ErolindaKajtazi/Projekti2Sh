@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- nav_graph.xml -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,8 +12,14 @@
         tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
-            app:destination="@id/nav_login" />
+            app:destination="@id/nav_login"
+            android:enterAnim="@transition/fade_in">
+            <argument
+                android:name="student"
+                app:argType="com.example.projekti2sh.models.Student" />
+        </action>
     </fragment>
+
     <fragment
         android:id="@+id/nav_login"
         android:name="com.example.projekti2sh.fragments.LoginFragment"
@@ -27,10 +33,6 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.projekti2sh.fragments.HomeFragment"
-        android:label="HomeFragment" />
-
-
-
-
-
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home"/>
 </navigation>

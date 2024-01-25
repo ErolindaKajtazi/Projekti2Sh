@@ -41,8 +41,14 @@ class RegisterFragment : Fragment() {
                 email = binding.editTextEmail.text.toString(),
                 password = binding.editTextPass.text.toString()
             )
+//            // Use Safe Args to navigate to LoginFragment with the Student object
+//            val action = RegisterFragmentDirections.actionRegisterFragmentToLoginFragment(student)
+//            findNavController().navigate(action)
 
             viewModel.registerStudent(student, findNavController())
         }
     }
+
+
+
 }

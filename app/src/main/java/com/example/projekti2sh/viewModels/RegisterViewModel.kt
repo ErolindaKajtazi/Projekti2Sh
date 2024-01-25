@@ -19,6 +19,7 @@ class RegisterViewModel : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> get() = _isLoading
 
+
     fun registerStudent(student: Student, navController: NavController) {
         _isLoading.value = true
         val apiService = RetrofitClient.createApiService()
